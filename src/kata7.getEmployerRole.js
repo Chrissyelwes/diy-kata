@@ -1,3 +1,5 @@
-const getEmployerRole = (employeeName, employees) => {};
+const getEmployerRole = (employeeName, employees) => {
+  
+};
 
 module.exports = getEmployerRole;
