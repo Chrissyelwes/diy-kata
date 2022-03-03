@@ -1,7 +1,13 @@
 const joinNames = namesObj => {
-  const names = namesObj.map(({ name }) => name);
-  const finalName = namesObj.pop();
-  return names.length ? `${names.join(" , ")} & ${finaleName}` : finalName;
+  return namesObj.reduce((acc, person, index) => {
+    if (index < namesObj.length - 2) {
+      return `${acc + person.name}, `;
+    }
+    if (index < namesObj.length - 1) {
+      return `${acc + person.name} `;
+    }
+    return `${acc}& ${person.name}.`;
+  }, "");
 };
 
 module.exports = joinNames;
